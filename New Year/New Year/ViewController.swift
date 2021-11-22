@@ -45,6 +45,7 @@ final class ViewController: UIViewController {
     //MARK:- Helpers
     
     func configureUI() {
+        
         let confettiView = SwiftConfettiView(frame: self.view.bounds)
         self.view.addSubview(confettiView)
         confettiView.type = .confetti
@@ -64,7 +65,6 @@ final class ViewController: UIViewController {
         
         
         view.addSubview(label3)
-        
         label3.anchor(top: label2.bottomAnchor, paddingTop: 150)
         label3.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         label3.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
@@ -79,8 +79,6 @@ final class ViewController: UIViewController {
         label4.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
         label4.centerY(inView: view, constant: 0)
         label4.centerX(inView: view, constant: 0)
-        
-        
     }
     
     
