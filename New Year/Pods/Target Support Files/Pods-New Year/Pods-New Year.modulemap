@@ -1,0 +1,6 @@
+framework module Pods_New_Year {
+  umbrella header "Pods-New Year-umbrella.h"
+
+  export *
+  module * { export * }
+}
