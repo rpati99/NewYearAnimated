@@ -8,8 +8,9 @@
 import UIKit
 import SwiftConfettiView
 
-
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+    
+    //Mark:- Properties
     
     var emitterLayer : CAEmitterLayer!
     
@@ -29,8 +30,10 @@ class ViewController: UIViewController {
         return UILabel().labelMaker(title: "2021", font: "ArialRoundedMTBold", size: 90)
     }()
     
-
-
+    
+    
+    //MARK:- Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -38,6 +41,8 @@ class ViewController: UIViewController {
         
     }
     
+    
+    //MARK:- Helpers
     
     func configureUI() {
         let confettiView = SwiftConfettiView(frame: self.view.bounds)
@@ -75,7 +80,7 @@ class ViewController: UIViewController {
         label4.centerY(inView: view, constant: 0)
         label4.centerX(inView: view, constant: 0)
         
-       
+        
     }
     
     
@@ -85,7 +90,7 @@ class ViewController: UIViewController {
             self.label3.alpha = 0
             self.label3.transform = CGAffineTransform(scaleX: 2, y: 2)
         }
-       
+        
         
         let offset = CGPoint(x: 0, y: view.frame.maxY)
         let x: CGFloat = 0, y: CGFloat = 0
@@ -96,18 +101,18 @@ class ViewController: UIViewController {
             options: .curveEaseOut, animations: {
                 self.label4.transform = .identity
                 self.label4.alpha = 1
-        })
-
+            })
+        
         
         label1.transform = CGAffineTransform(scaleX: 0, y: 0)
         UIView.animate(withDuration: 1, delay: 2, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             self.label1.alpha = 1
-                      self.label1.transform = .identity
+            self.label1.transform = .identity
         }) { (true) in
             self.label2.transform = CGAffineTransform(scaleX: 0, y: 0)
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseInOut) {
                 self.label2.alpha = 1
-               self.label2.transform = .identity
+                self.label2.transform = .identity
             } completion: { (false) in }
         }
     }
